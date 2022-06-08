@@ -10,7 +10,8 @@
 以及openssl的依赖dll
 
 主要功能：
-实现https的流量解密，需要先安装ca证书，不然浏览器会报错
+实现https的流量解密，需要先安装ca证书，不然浏览器会报错,因为这里没有指定alpn（https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_set_alpn_select_cb.html），
+所以这里会看到使用的传输协议是http/1.1，而不是http2
 
 blog:
 https://blog.csdn.net/qq_37353105/article/details/125164769
