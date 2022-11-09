@@ -1,1 +1,17 @@
+说明：
+该项目是基于WinDivert的，修改的是streamdump这个例子 https://github.com/basil00/Divert/blob/master/examples/streamdump/streamdump.c
 
+编译：
+需要你有openssl的依赖
+
+运行：
+需要包含ca的证书和私钥（生成方式在这里可以找到 https://github.com/xyddnljydd/httpsMitm/blob/main/Release/createCa.txt）
+需要包含服务端的证书和私钥
+以及openssl的依赖dll
+
+主要功能：
+实现https的流量解密，需要先安装ca证书，不然浏览器会报错,因为这里没有指定alpn（https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_set_alpn_select_cb.html），
+所以这里会看到使用的传输协议是http/1.1，而不是http2
+
+blog:
+https://blog.csdn.net/qq_37353105/article/details/125164769
